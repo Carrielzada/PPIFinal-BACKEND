@@ -1,0 +1,26 @@
+{
+  "name": "ppifinal-backend",
+  "version": "1.0.0",
+  "description": "Atividade Final PPI",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carrielzada/PPIFinal-BACKEND.git"
+  },
+  "author": "Carrielzada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carrielzada/PPIFinal-BACKEND/issues"
+  },
+  "homepage": "https://github.com/Carrielzada/PPIFinal-BACKEND#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mysql2": "^3.9.7"
+  }
+}
