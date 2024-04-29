@@ -1,6 +1,6 @@
 import conectar from "./Conexao.js"; //Não esquecer do .js no final
 import Interessado from "../Modelos/interessado.js";
-//DAO Data Access Object
+//DAO = Data Access Object
 export default class InteressadoDAO{
     async gravar(interessado){
         if (interessado instanceof Interessado){
@@ -17,21 +17,18 @@ export default class InteressadoDAO{
             interessado.codigo = resultados.insertId; // Recupero o ID gerado pelo DB
         }
     }
-    async atualizar(interessado){
-        if (interessado instanceof Interessado){
+    async atualizar(interessado) {
+        if (interessado instanceof Interessado) {
             const conexao = await conectar();
-            const sql = `UPDATE Interessado SET nome = ?, 
-            cpf = ?, telefone = ?, email = ?, 
-            WHERE id = ?`;
-        const parametros = [
-            interessado.nome,
-            interessado.cpf,
-            interessado.telefone,
-            interessado.email,
-            interessado.codigo
-        ];
-
-        await conexao.execute(sql, parametros);
+            const sql = `UPDATE interessado SET nome = ?, cpf = ?, telefone = ?, email = ? WHERE id = ?`;
+            const parametros = [
+                interessado.nome,
+                interessado.cpf,
+                interessado.telefone,
+                interessado.email,
+                interessado.codigo
+            ];
+            await conexao.execute(sql, parametros);
         }
     }
     async excluir(interessado){

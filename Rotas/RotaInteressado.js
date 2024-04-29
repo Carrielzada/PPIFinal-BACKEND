@@ -4,10 +4,10 @@
 //             domínio da aplicação   endpoint
 
 import { Router } from 'express';
-import InteressadosCtrl from '../Controles/InteressadosCtrl.js';
+import InteressadosCtrl from '../Controles/interessadosCtrl.js';
 
 const rotaInteressado = new Router();
-const intereCtrl = new interessadosCtrl();
+const intereCtrl = new InteressadosCtrl();
 
 rotaInteressado
 .get('/', intereCtrl.consultar)
@@ -16,6 +16,5 @@ rotaInteressado
 .put('/:codigo', intereCtrl.atualizar)
 .patch('/:codigo', intereCtrl.atualizar)
 .delete('/:codigo', intereCtrl.excluir);
-
 
 export default rotaInteressado;

@@ -1,5 +1,5 @@
 import Interessado from "../Modelos/interessado.js";
-export default class interessadosCtrl {
+export default class InteressadosCtrl {
 // Essa classe terá a responsabilidade de traduzir pedidos HTTP em comandos internos da aplicação
 // A nossa aplicação sabe gravar, atualizar, excluir e consultar interessado no BD.
 // Será necessário manipular requisições HTTP
@@ -30,7 +30,7 @@ gravar(requisicao, resposta){
                     resposta.json({
                         "status":true,
                         "mensagem": "Interessado gravado com sucesso!",
-                        "codigo_cliente": interessado.codigo
+                        "codigo_interessado": interessado.codigo
                     });
                 }).catch((erro) =>{
                     resposta.status(500);
@@ -148,15 +148,15 @@ gravar(requisicao, resposta){
             const termoDePesquisa = requisicao.params.termo;
             const interessado = new Interessado(0);
             interessado.consultar(termoDePesquisa)
-            .then((clientes)=>{
+            .then((interessados)=>{
                 resposta.status(200);
-                resposta.json(clientes);
+                resposta.json(interessados);
             })
             .catch((erro) =>{
                 resposta.status(500);
                 resposta.json({
                     "status":false,
-                    "mensagem": "Não foi possível consultar os clientes! " + erro.message
+                    "mensagem": "Não foi possível consultar os interessados! " + erro.message
                 })
             })
         }
@@ -164,7 +164,7 @@ gravar(requisicao, resposta){
             resposta.status(405);
             resposta.json({
                 "status":false,
-                "mensagem": "Requisição inválida! Esperando o método GET para consultar os clientes!"
+                "mensagem": "Requisição inválida! Esperando o método GET para consultar os interessados!"
             })
         }
     }

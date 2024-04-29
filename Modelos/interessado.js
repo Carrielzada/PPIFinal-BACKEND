@@ -9,10 +9,10 @@ export default class Interessado {
     //somente por meio de métodos públicos é que podemos acessar os atributos de uma classe
     //em javascript definimos atributos privados usando #
     #codigo;
-    #nome
-    #cpf
-    #telefone
-    #email
+    #nome;
+    #cpf;
+    #telefone;
+    #email;
 
     constructor(codigo=0, nome="", cpf="", telefone="", email="") {
         this.#codigo = codigo;
