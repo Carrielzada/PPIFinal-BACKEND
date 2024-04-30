@@ -1,8 +1,8 @@
-// Persistencia/filhoteDAO.js
 import conectar from "./Conexao.js";
-import Filhote from "../Modelos/filhote.js";
+import Filhote from "../Modelos/filhotes.js";
 
 export default class FilhoteDAO {
+
     async gravar(filhote) {
         if (filhote instanceof Filhote) {
             const conexao = await conectar();
